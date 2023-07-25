@@ -1,0 +1,30 @@
+# python program which will accept the all values and find sum and avg using functions
+# defining the function for reading the values
+def readvalues():
+    lst = []
+    n = int(input("Enter how many values do you want: "))
+    if n <= 0:
+        return lst #return the empty list
+    else:
+        for i in range(1,1+n):
+            value=float(input("Enter the {} value: ".format(i)))
+            lst.append(value)
+        return lst #returning the non-empty list
+
+# defining the function for sum and avg
+def sumavg(kvrlst):
+    if len(kvrlst) <= 0:
+        print("empty list ! can't calculate the sum and avg")
+    else:
+        s = 0
+        for i in kvrlst:
+            s += i
+        
+        
+        print("given values:{}".format(kvrlst))
+        print("Sum of the values:{}".format(s))
+        print("Avg of the values:{}".format(s/len(kvrlst)))
+
+# function calling
+lst = readvalues()
+sumavg(lst)
